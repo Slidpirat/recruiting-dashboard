@@ -2,67 +2,80 @@ import React from "react";
 import ScrollToTop from "react-scroll-up";
 import { FiChevronUp } from "react-icons/fi";
 import Helmet from "../component/common/Helmet";
+import Header from "../component/header/HeaderFour";
 
 const PortfolioList = [
   {
     images: "9",
-    category: "General",
-    title: "Quick Reference Guide: Prod + Tech Recruiter Resources",
+    category: "Html",
+    title: "Textio & JDs - TA 4.0 Onboarding",
+    link: "https://docs.google.com/presentation/d/1_2Ytdt4f96Sg8r_ku9A5qE5kYR2LRg62a7EW70KPcPQ/edit#slide=id.ga0f3892661_1_736",
   },
   {
     images: "8",
-    category: "Html",
-    title: "Getting tickets to the big show",
+    category: "General",
+    title: "Quick Reference Guide: Prod + Tech Recruiter Resources",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
     images: "7",
-    category: "Graphic",
-    title: "Getting tickets to the big show",
+    category: "Recruiter Traingin",
+    title: "Linkedin Recruiter Demo",
+    link: "https://www.youtube.com/watch?v=S6mVwmCHShk",
   },
   {
-    images: "4",
+    images: "1",
     category: "Developer",
     title: "The design is Thinking",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "5",
+    images: "1",
     category: "Freelancer",
     title: "The portfolio For Frelancer",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "6",
+    images: "1",
     category: "Freelancer",
     title: "You can see your Portfolio",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "7",
+    images: "1",
     category: "Freelancer",
     title: "The Language of Developer",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
     images: "1",
     category: "Freelancer",
     title: "The new Thinking for Design",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "2",
+    images: "1",
     category: "Freelancer",
     title: "The new Thinking for Design",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "3",
+    images: "1",
     category: "Freelancer",
     title: "Getting tickets to the big show",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "8",
+    images: "1",
     category: "Freelancer",
     title: "You can see your Portfolio",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
   {
-    images: "9",
+    images: "1",
     category: "Freelancer",
     title: "Getting tickets to the big show",
+    link: "https://docs.google.com/document/d/1X0-AMlr1TrQ1iOb_yYLl2QJ3iBP03_Td_RmoZgse7O8/edit",
   },
 ];
 
@@ -72,7 +85,11 @@ const CreativePortfolio = () => {
       <Helmet pageTitle="Recruiting Dashboard" />
 
       {/* Start Header Area  */}
-      {/* <Header headerPosition="header--static" logo="symbol-dark" color="color-black"/> */}
+      <Header
+        headerPosition="header--static"
+        logo="symbol-dark"
+        color="color-black"
+      />
       {/* End Header Area  */}
 
       {/* Start Portfolio Area  */}
@@ -94,12 +111,18 @@ const CreativePortfolio = () => {
                   <div className="content">
                     <p className="portfoliotype">{value.category}</p>
                     <h4 className="title">
-                      <a href="/portfolio-details">{value.title}</a>
+                      {/* eslint-disable-next-line */}
+                      <a href={value.link} target="_blank">
+                        {value.title}
+                      </a>
                     </h4>
+
                     <div className="portfolio-btn">
                       <a
                         className="rn-btn text-white"
-                        href="/portfolio-details"
+                        href={value.link}
+                        /* eslint-disable-next-line */
+                        target="_blank"
                       >
                         Read More
                       </a>
